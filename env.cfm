@@ -7,10 +7,15 @@
 
 <p>
 	Lucee #server.lucee.version# released #dateformat(server.lucee["release-date"], "dd mmm yyyy")#<br>
-	#server.servlet.name# (java #server.java.version#) running on #server.os.name# (#server.os.version#)
+	#server.servlet.name# (java #server.java.version#) running on #server.os.name# (#server.os.version#)<br>
+	Hosted at #headers.host#
 </p>
 
-<h3>Hosted at: #headers.host#</h3>
+<!--- tutum.co specific container magic --->
+<cfif structKeyExists(env, "TUTUM_CONTAINER_HOSTNAME")>
+	<h3>Container: #env.TUTUM_CONTAINER_HOSTNAME#</h3>
+</cfif>
+
 
 <h2>Server Internals</h2>
 
