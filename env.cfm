@@ -5,6 +5,8 @@
 <cfoutput>
 <h1>Hello Cruel World!</h1>
 
+<cfif structkeyexists(env, "hostname")><h2>#env.hostname#</h2></cfif>
+
 <p>
 	Lucee #server.lucee.version# released #dateformat(server.lucee["release-date"], "dd mmm yyyy")#<br>
 	#server.servlet.name# (java #server.java.version#) running on #server.os.name# (#server.os.version#)<br>
